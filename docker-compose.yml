@@ -4,5 +4,6 @@ services:
   javas:
     build:
       context: .
+      dockerfile: Dockerfile-test
     ports:
       - 3000:8080
