@@ -1,0 +1,19 @@
+version: '3.1'
+
+services:
+  javas:
+    build:
+      context: .
+      dockerfile: Dockerfile-test
+    ports:
+      - 3000:3000
+  mysql:
+    build:
+      context: ./db
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_PASSWORD: sample
+      MYSQL_USER: admin
+      MYSQL_DATABASE: hibernate
